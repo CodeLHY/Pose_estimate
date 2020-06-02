@@ -444,6 +444,8 @@ def del_near_same_key(list_combined, list_belong):
                 list_belong_filted.append(list_belong[index_cur])  # index_cur记载了初次发现重复的时刻，这是的belong信息是我们需要的
                 index_cur = temp_index_nxt  # 更新外面的指针到当前的位置
                 index_nxt = temp_index_nxt+1
+                if index_nxt>=(length-2):
+                    flag_stop = True
                 if not flag_stop:
                     belong_cur = list_belong[index_cur]
                     belong_nxt = list_belong[index_nxt] # 更新从属性质
@@ -457,7 +459,11 @@ def del_near_same_key(list_combined, list_belong):
                 list_belong_filted.append(list_belong[index_cur])  # index_cur记载了初次发现重复的时刻，这是的belong信息是我们需要的
                 index_cur = temp_index_nxt  # 更新外面的指针到当前的位置
                 index_nxt = temp_index_nxt + 1
+                if index_nxt>=(length-2):
+                    flag_stop = True
                 if not flag_stop:
+                    print(index_cur)
+                    print(len(list_belong))
                     belong_cur = list_belong[index_cur]
                     belong_nxt = list_belong[index_nxt] #更新从属性质
 

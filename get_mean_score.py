@@ -118,7 +118,10 @@ def get_weight_mean(fv_mul):
         weight_fv_mul[key] = weight_key
         sum += weight_key
     for key in fv_mul.keys():
-        weight_fv_mul[key] = weight_fv_mul[key]/sum
+        if sum <= 0.0001:
+            weight_fv_mul[key] = 0.067
+        else:
+            weight_fv_mul[key] = weight_fv_mul[key]/sum
     return weight_fv_mul
 def get_frame_weights(fv_mul,start_frame,stop_frame):
     frame_mul = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [], 10: [], 11: [], 12: [], 13: []}
@@ -148,7 +151,10 @@ def get_limbs_weights(fv_mul,start_frame,stop_frame):
     for key in limbs_weights.keys():
         sum_weights=sum_weights+limbs_weights[key]
     for k in range(11):
-        limbs_weights[k]=limbs_weights[k]/sum_weights
+        if sum_weights <=0.0001:
+            limbs_weights[k] = 0.091
+        else:
+            limbs_weights[k]=limbs_weights[k]/sum_weights
     return limbs_weights
 def get_angle_weights(limbs_weights):
     angle_weights={}
@@ -166,7 +172,10 @@ def get_angle_weights(limbs_weights):
     for key in angle_weights.keys():
         sum_weights=sum_weights+angle_weights[key]
     for key in angle_weights.keys():
-        angle_weights[key]=angle_weights[key]/sum_weights
+        if sum_weights <= 0.0001:
+            angle_weights[key] = 0.1
+        else:
+            angle_weights[key]=angle_weights[key]/sum_weights
     return angle_weights
 def get_angle2limbs_weights(angle_weights):
     angle2limbs_weights={}

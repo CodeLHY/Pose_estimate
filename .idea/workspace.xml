@@ -2,204 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ec78b60-9637-4f3f-ad69-f530c30c9a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_score.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_0_40_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_0_51_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_10_398_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_10_406_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_11_435_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_11_445_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_12_474_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_12_484_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_13_514_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_13_528_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_14_549_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_14_551_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_15_589_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_15_602_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_16_627_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_16_634_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_17_663_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_17_673_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_18_700_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_18_713_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_19_743_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_19_745_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_1_78_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_1_89_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_20_781_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_20_790_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_21_846_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_21_846_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_22_919_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_22_923_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_23_952_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_23_957_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_24_1004_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_24_1027_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_26_1088_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_26_1101_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_28_1133_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_28_1138_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_29_1196_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_29_1213_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_2_108_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_2_127_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_30_1224_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_30_1231_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_31_1280_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_31_1303_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_32_1314_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_32_1323_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_33_1358_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_33_1366_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_34_1379_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_34_1380_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_36_1419_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_36_1430_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_3_142_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_3_154_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_4_177_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_4_188_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_5_216_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_5_226_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_6_253_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_6_263_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_7_291_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_7_302_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_8_325_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_8_337_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_9_361_standard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_match/matched_9_374_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1000_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1006_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1028_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1032_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1039_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_105_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1075_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1079_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1102_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1115_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1126_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1139_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_114_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1158_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1162_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1178_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1194_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1197_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1202_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1214_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1232_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1234_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1238_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1270_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1274_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1283_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_128_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1290_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1304_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1319_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1324_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_133_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1350_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1367_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1381_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_140_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_1431_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_145_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_155_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_160_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_177_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_189_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_191_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_193_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_210_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_227_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_228_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_232_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_246_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_249_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_264_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_270_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_282_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_285_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_303_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_309_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_318_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_323_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_338_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_352_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_355_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_359_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_375_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_389_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_391_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_398_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_407_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_422_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_431_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_434_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_446_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_465_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_467_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_46_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_474_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_47_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_485_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_507_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_509_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_510_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_514_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_529_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_52_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_543_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_547_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_550_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_554_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_566_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_568_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_590_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_591_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_593_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_602_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_603_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_628_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_629_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_634_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_635_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_670_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_671_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_674_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_701_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_706_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_714_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_715_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_746_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_751_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_752_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_765_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_788_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_791_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_800_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_830_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_832_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_836_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_847_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_868_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_871_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_877_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_90_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_911_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_913_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_914_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_924_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_950_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_958_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_970_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key_images_user/matched_996_user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_fvector_mul.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_fvector_mul.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_mean_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_mean_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +22,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -224,6 +31,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -238,7 +46,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main2">
+  <component name="RunManager" selected="Python.main_score">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="version1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -283,9 +91,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_score" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="version1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="T:\Anaconda\anaconda\envs\pytorch\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="K:\Pose_Estimate\1A\version1\main_score.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.main2" />
+      <item itemvalue="Python.main_score" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -300,7 +131,9 @@
       <updated>1590841121961</updated>
       <workItem from="1590841131636" duration="2649000" />
       <workItem from="1590888113322" duration="35727000" />
-      <workItem from="1590972061397" duration="3543000" />
+      <workItem from="1590972061397" duration="27034000" />
+      <workItem from="1591056094144" duration="7397000" />
+      <workItem from="1591106100877" duration="21000" />
     </task>
     <servers />
   </component>
@@ -325,14 +158,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/get_fvector_mul.py</url>
-          <line>577</line>
-          <option name="timeStamp" value="11" />
+          <line>590</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/get_fvector_mul.py</url>
+          <line>531</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/version1$main.coverage" NAME="main Coverage Results" MODIFIED="1590925038569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/version1$main3.coverage" NAME="main3 Coverage Results" MODIFIED="1591062495759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/version1$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1590972600307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

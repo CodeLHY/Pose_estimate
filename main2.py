@@ -7,7 +7,60 @@ def get_total_frames(path_video):
     total_frames = int(cap.get(7))
     return total_frames
 
+def get_key_frame_25(stop_frame_standard, stop_frames_user):
+    list_inside = []
+    for stop_frame_user in stop_frames_user:
+        stop_frame_user_shift = stop_frame_user-25
+        if (((stop_frame_user_shift)>(stop_frame_standard-30)) and (stop_frame_user<(stop_frame_standard+30))):
+            list_inside.append(stop_frame_user)
+    print(stop_frame_standard)
+    print(list_inside)
+    return list_inside
+def get_match_key_frame_25(start_mixed_standard,stop_mixed_standard,
+                           stop_mixed_user,
+                           fv_mul_front_standard,
+                           fpositions_left_user, fpositions_front_user,
+                           fpositions_left_standard, fpositions_front_standard):
+    """
 
+    :param start_mixed_standard:
+    :param stop_mixed_standard:
+    :param stop_mixed_user:
+    :param fv_mul_front_standard:
+    :param fpositions_left_user:
+    :param fpositions_front_user:
+    :param fpositions_left_standard:
+    :param fpositions_front_standard:
+    :return: list_matchs list【【user，standard】】得到的所有标准视频中停止帧对应的关键帧， dict_stop_score list【dict】得到的所有标准视频中停止帧的得分
+    """
+    dict_stop_score={}
+    list_matchs = []
+    for (stop_frame_standard, start_frame_standard) in zip(stop_mixed_standard, start_mixed_standard):
+
+        stop_frames_user_25 = get_key_frame_25(stop_frame_standard, stop_mixed_user)
+        max_score_all = 0
+        max_score_limbs = {}
+        if len(stop_frames_user_25)==0:
+            dict_stop_score[stop_frame_standard] = None
+            match = [None, stop_frame_standard]
+            # dict_match[stop_frame_standard] = None
+            list_matchs.append(match)
+        else:
+            for stop_frame_user_25 in stop_frames_user_25:
+                score_limbs, score_all = get_all_scores(fpositions_front_standard, fpositions_left_standard,
+                                                        fpositions_front_user, fpositions_left_user,
+                                                        fv_mul_front_standard,
+                                                        start_frame_standard, stop_frame_standard, stop_frame_user_25)
+                if score_all>max_score_all:
+                    max_score_all = score_all
+                    max_score_limbs = score_limbs
+                    # dict_match[stop_frame_standard] = stop_frame_user_25
+                    match = [stop_frame_user_25, stop_frame_standard]
+            list_matchs.append(match)
+            score_limbs_all = max_score_limbs
+            score_limbs_all[11] = max_score_all
+            dict_stop_score[stop_frame_standard] = score_limbs_all
+    return dict_stop_score, list_matchs
 def get_matched_score(matches, start_mixed_standard, fv_mul_front_standard, fpositions_left_user, fpositions_front_user,
                           fpositions_left_standard, fpositions_front_standard):
     """
@@ -51,13 +104,13 @@ def get_video_score(total_frames, start_mixed_user, stop_mixed_user, dict_score,
     :return: list 每一个元素都是一个字典，对应着这个帧的各个关节的得分（0~10）以及总体得分（11）. 因此其长度和视频的总帧数一致
     """
     scores = {}     #这里改成了dict,比较直观，也可改为list
-    score_wait = {i:0 for i in range(12)}# 0~10表示人体的11个躯干，11表示整体得分
+    score_wait = {i:0 for i in range(12)} # 0~10表示人体的11个躯干，11表示整体得分
     index_start_user = 0
     index_stop_user = 0
     stop_frame = stop_mixed_user[index_stop_user]
     start_frame = start_mixed_user[index_start_user]
     for i in range(total_frames):
-        if i < start_frame :
+        if i < start_frame:
             # 如果当前帧数小于下一个动作的起始帧，那么就给他全0
             score = score_wait
             scores[i]=score
@@ -109,48 +162,7 @@ def get_video_score(total_frames, start_mixed_user, stop_mixed_user, dict_score,
 #     return dict_stop_score
 
 
-def get_key_frame_25(stop_frame_standard, stop_frames_user):
-    list_inside = []
-    for stop_frame_user in stop_frames_user:
-        stop_frame_user_shift = stop_frame_user-25
-        if (((stop_frame_user_shift)>(stop_frame_standard-30)) and (stop_frame_user<(stop_frame_standard+30))):
-            list_inside.append(stop_frame_user)
-    print(stop_frame_standard)
-    print(list_inside)
-    return list_inside
-def get_match_key_frame_25(start_mixed_standard,stop_mixed_standard,
-                           stop_mixed_user,
-                           fv_mul_front_standard,
-                           fpositions_left_user, fpositions_front_user,
-                           fpositions_left_standard, fpositions_front_standard):
-    dict_stop_score={}
-    list_matchs = []
-    for (stop_frame_standard, start_frame_standard) in zip(stop_mixed_standard, start_mixed_standard):
 
-        stop_frames_user_25 = get_key_frame_25(stop_frame_standard, stop_mixed_user)
-        max_score_all = 0
-        max_score_limbs = {}
-        if len(stop_frames_user_25)==0:
-            dict_stop_score[stop_frame_standard] = None
-            match = [None, stop_frame_standard]
-            # dict_match[stop_frame_standard] = None
-            list_matchs.append(match)
-        else:
-            for stop_frame_user_25 in stop_frames_user_25:
-                score_limbs, score_all = get_all_scores(fpositions_front_standard, fpositions_left_standard,
-                                                        fpositions_front_user, fpositions_left_user,
-                                                        fv_mul_front_standard,
-                                                        start_frame_standard, stop_frame_standard, stop_frame_user_25)
-                if score_all>max_score_all:
-                    max_score_all = score_all
-                    max_score_limbs = score_limbs
-                    # dict_match[stop_frame_standard] = stop_frame_user_25
-                    match = [stop_frame_user_25, stop_frame_standard]
-            list_matchs.append(match)
-            score_limbs_all = max_score_limbs
-            score_limbs_all[11] = max_score_all
-            dict_stop_score[stop_frame_standard] = score_limbs_all
-    return dict_stop_score, list_matchs
 def debug_save_mixed(save_dir, stop_frames, path_video):
     cap = cv2.VideoCapture(path_video)
     ret_val, image = cap.read()
