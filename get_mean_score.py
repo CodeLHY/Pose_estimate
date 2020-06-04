@@ -1,4 +1,10 @@
 from get_fvector_mul import  *
+import numpy as np
+import math
+import matplotlib
+matplotlib.use('Agg')
+from scipy.spatial.distance import cdist
+
 #根据肩宽和胯宽生成用户合成之后的全身的关节坐标
 def choose_view(fposition1, fposition2,frame):
     """
@@ -228,9 +234,9 @@ def get_compare_score(compare_angles,limbs_weighs,alpha_2):
 
     scores = sum(score)
     return scores,scoreds
-def get_final_score(self_score,compare_score,self_weight,compare_weight):
+def get_final_score(self_score,compare_score,track_score,self_weight,compare_weight,track_weight):
     score={}
-    score=self_weight*self_score+compare_weight*compare_score
+    score=self_weight*self_score+compare_weight*compare_score+track_weight*track_score
     return score
 def get_limbs_score(self_all_score,compare_all_score,weights):
     alpha1=0.7
@@ -252,11 +258,137 @@ def get_limbs_score(self_all_score,compare_all_score,weights):
         limbs_score=alpha1*compare_all_score[key]+alpha2*angle2limbs_score[key]
         limbs_scores.append(limbs_score)
     return limbs_scores
+#这个是对两端时间序列进行dtw的函数
+#输入格式为：ref:[(x1,y1),(x2,y2)...],compare:[(x1,y1),(x2,y2)...]，二者不用一样长
+#输出格式为：[0, 1,1....]为ref每个元素对应compare元素的序号
+def dtw_distance(distances):
+    DTW = np.empty_like(distances)
+    DTW[0, 0] = 0
+    for i in range(0, DTW.shape[0]):
+        for j in range(0, DTW.shape[1]):
+            if i == 0 and j == 0:
+                DTW[i, j] = distances[i, j]
+            elif i == 0:
+                DTW[i, j] = distances[i, j] + DTW[i, j - 1]
+            elif j == 0:
+                DTW[i, j] = distances[i, j] + DTW[i - 1, j]
+            else:
+                DTW[i, j] = distances[i, j] + min(DTW[i - 1, j],
+                                                  DTW[i, j - 1],
+                                                  DTW[i - 1, j - 1]
+                                                  )
+    return DTW
+def backtrack(DTW):
+    i, j = DTW.shape[0] - 1, DTW.shape[1] - 1
+    output_x = []
+    output_y = []
+    output_x.append(i)
+    output_y.append(j)
+    while i > 0 and j > 0:
+        local_min = np.argmin((DTW[i - 1, j - 1], DTW[i, j - 1], DTW[i - 1, j]))
+        if local_min == 0:
+            i -= 1
+            j -= 1
+        elif local_min == 1:
+            j -= 1
+        else:
+            i -= 1
+        output_x.append(i)
+        output_y.append(j)
+    output_x.append(0)
+    output_y.append(0)
+    output_x.reverse()
+    output_y.reverse()
+    return np.array(output_x), np.array(output_y)
+def multi_DTW(a, b, len_ref,len_tar):
+    cnt = []
+    for x in range(len(a)):
+        if a[x - 1] == a[x]:
+            cnt.append(x)
+    target = np.delete(b, cnt)
+    if len( target) < len_ref:
+        differ = len_ref - len(target)
+        target = np.pad(target, (0, differ), 'constant', constant_values=(1, len_tar - 1))
+    return target
+def euc_dist(pt1, pt2):
+    return math.sqrt((pt2[0] - pt1[0]) * (pt2[0] - pt1[0]) + (pt2[1] - pt1[1]) * (pt2[1] - pt1[1]))
+def dtw(ref, compare, len_ref, len_tar, distance_metric='euclidean'):
+    distance = cdist(ref, compare, distance_metric)  # use with euclidean
+    cum_min_dist = dtw_distance(distance)  # calculate using dtw algorithm
+    x, y = backtrack(cum_min_dist)  # back track in dtw
+    final_y = multi_DTW(x, y, len_ref, len_tar)
+    return final_y
+#这个是用来寻找单个结束帧对应的起始帧的函数
+def get_start_matchs(stop_frame,start_frames,stop_frames):
+    stop_numpy=np.array(stop_frames)
+    itemindex = np.argwhere( stop_numpy== stop_frame)
+    print(itemindex)
+    start_frame=start_frames[itemindex[0][0]]
+    return start_frame
+#分别截取标准和用户起始到结束的这段动作的所有坐标点
+def get_points(fpositions_standard,fpositions_user,start_standard,stop_standard,start_user,stop_user):
+    """
+    :param fpositions_standard:标准视频所有坐标
+    :param fpositions_user:用户视频所有坐标点
+    :param start_standard,stop_standard:标准视频中单个动作的起始和结束帧
+    :param start_user,stop_user:用户视频中单个动作的起始和结束帧
+    :return points_standard_all, points_user_all：格式：[0:[(x1,y1),(x2,y2)...],1:[(x1,y1),(x2,y2)...]...]
+    """
+    points_standard_all={}
+    points_user_all={}
+    for j in range(14):
+        points_user= []
+        points_standard= []
+        for k in range(start_standard, stop_standard):
+            x1, y1 = fpositions_standard[j][k]
+            points_standard.append((int(x1), int(y1)))
+        for k in range(start_user, stop_user):
+            x1, y1 = fpositions_user[j][k]
+            points_user.append((int(x1), int(y1)))
+        points_standard_all[j]=points_standard
+        points_user_all[j]=points_user
+    return points_standard_all, points_user_all
+def get_track_score(fv_mul_standard,fpositions_front_standard,fpositions_front_user,
+                    start_mixed_standard,stop_mixed_standard,start_mixed_user,stop_mixed_user):
+    """
+    :param fv_mul_standard:标准视频的fv_mul
+    ...
+    :return track_score:单个动作轨迹得分
+    :
+    """
+    scores=[]
+    frame_weights = get_frame_weights(fv_mul_standard, start_mixed_standard, stop_mixed_standard)
+    points_standard_all, points_user_all = get_points( fpositions_front_standard, fpositions_front_user,
+                                              start_mixed_standard, stop_mixed_standard, start_mixed_user,
+                                              stop_mixed_user)
+    for j in range(14):
+        dtw_xy = dtw(points_standard_all[j], points_user_all[j], len(points_standard_all[j]), len(points_user_all[j]), distance_metric='euclidean')
+        distance = []
+        for k in range(len(dtw_xy)):
+            xy1=points_standard_all[j][k]
+            xy2=points_user_all[j][dtw_xy[k]]
+            distance_xy=euc_dist(xy1,xy2)
+            distance.append(distance_xy)
+        distance_var=np.std(distance)
+        print(distance_var)
+        if distance_var<10:
+            score=100
+        elif 10<=distance_var<20:
+            score=90
+        elif 20<=distance_var<=30:
+            score=70
+        else:score=50
+        scores.append(score*frame_weights[j])
+    track_score=sum(scores)
+    return track_score
+
+
 # 以下为测试调参部分代码,输出单帧对比分数
-def get_all_scores(fposition1, fposition2,fposition3, fposition4,fv_mul,start_frame,stop_frame1,stop_frame2):
+def get_all_scores(fposition1, fposition2,fposition3, fposition4,fv_mul,start_frame,stop_frame1,stop_frame2,start_frame2):
     alpha_1=alpha_2=3
-    self_weight=0.7
+    self_weight=0.65
     compare_weight=0.3
+    track_weight=0.05
     choice_upper, choice_lower = choose_view(fposition1, fposition2, stop_frame1)
     combine_standard=combine_views(choice_upper, choice_lower,fposition1,fposition2,stop_frame1)
     combine_user=combine_views(choice_upper, choice_lower,fposition3,fposition4,stop_frame2)
@@ -269,7 +401,8 @@ def get_all_scores(fposition1, fposition2,fposition3, fposition4,fv_mul,start_fr
     angle_weights=get_angle_weights(limbs_weights)
     self_score,self_all_score=get_self_score(angles_1,angles_2,angle_weights,alpha_1)
     compare_score,compare_all_score=get_compare_score(compare_angles,limbs_weights,alpha_2)
-    final_score=get_final_score(self_score,compare_score,self_weight,compare_weight)
+    track_score = get_track_score(fv_mul, fposition1, fposition3, start_frame, stop_frame1, start_frame2, stop_frame2)
+    final_score=get_final_score(self_score,compare_score,track_score,self_weight,compare_weight,track_weight)
     return compare_all_score,final_score
 #以下部分输出评分分数和各躯干分数，需要接收输入有fposition1, fposition2,fposition3,fposition4,fv_mul,start_frame, stop_frame1,stop_frame2
 #其中fposition1, fposition2表示标准的正面和左面视角坐标，fposition3,fposition4表示用户的正面和左面视角坐标

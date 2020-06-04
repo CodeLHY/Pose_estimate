@@ -19,7 +19,7 @@ def get_key_frame_25(stop_frame_standard, stop_frames_user):
     return list_inside
 # 获得所有用户和标准视频的停止帧的匹配结果，以及标准视频中各个停止帧的得分
 def get_match_key_frame_25(start_mixed_standard,stop_mixed_standard,
-                           stop_mixed_user,
+                           start_mixed_user,stop_mixed_user,
                            fv_mul_front_standard,
                            fpositions_left_user, fpositions_front_user,
                            fpositions_left_standard, fpositions_front_standard):
@@ -54,10 +54,11 @@ def get_match_key_frame_25(start_mixed_standard,stop_mixed_standard,
             for stop_frame_user_25 in stop_frames_user_25:
                 if stop_frame_user_25 == 713:
                     print(1)
+                start_frame_user_25 = get_start_matchs(stop_frame_user_25, start_mixed_user, stop_mixed_user)
                 score_limbs, score_all = get_all_scores(fpositions_front_standard, fpositions_left_standard,
                                                         fpositions_front_user, fpositions_left_user,
                                                         fv_mul_front_standard,
-                                                        start_frame_standard, stop_frame_standard, stop_frame_user_25)
+                                                        start_frame_standard, stop_frame_standard, stop_frame_user_25,start_frame_user_25)
                 if score_all>max_score_all:
                     max_score_all = score_all
                     max_score_limbs = score_limbs
@@ -255,7 +256,7 @@ def main_score(path_video_user_front, path_video_user_left, path_json_user_front
                                                                                                 stop_mixed_user)
     plot_lines(fv_mul_added_front_standard, start_mixed_standard, stop_mixed_standard)
     dict_score, matches = get_match_key_frame_25(start_mixed_standard, stop_mixed_standard,
-                           stop_mixed_user,
+                           start_mixed_user,stop_mixed_user,
                            fv_mul_front_standard,
                            fpositions_left_user, fpositions_front_user,
                            fpositions_left_standard, fpositions_front_standard)
@@ -280,7 +281,7 @@ path_json_standard_left = "K:\Pose_Estimate\\1A\\version1\\result\\tizhuan_left_
 
 path_video_output_front = "K:\Pose_Estimate\\1A\\version1\data\output\\front.avi"
 path_video_output_left = "K:\Pose_Estimate\\1A\\version1\data\output\\left.avi"
-main(path_video_user_front, path_video_user_left, path_json_user_front, path_json_user_left,
+main_score(path_video_user_front, path_video_user_left, path_json_user_front, path_json_user_left,
          path_video_standard_front, path_video_standard_left, path_json_standard_front, path_json_standard_left,
          path_video_output_front, path_video_output_left)
 

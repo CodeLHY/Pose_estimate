@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ec78b60-9637-4f3f-ad69-f530c30c9a13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main_score.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_fvector_mul.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_fvector_mul.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/get_mean_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_mean_score.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_score.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="T:/QQ/qq_file/1227347730/FileRecv/main_score.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -33,6 +31,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
+    <property name="two.files.diff.last.used.file" value="T:/QQ/qq_file/1227347730/FileRecv/main_score.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -134,6 +133,7 @@
       <workItem from="1590972061397" duration="27034000" />
       <workItem from="1591056094144" duration="7397000" />
       <workItem from="1591106100877" duration="21000" />
+      <workItem from="1591236243933" duration="3082000" />
     </task>
     <servers />
   </component>
@@ -160,11 +160,6 @@
           <url>file://$PROJECT_DIR$/get_fvector_mul.py</url>
           <line>590</line>
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/get_fvector_mul.py</url>
-          <line>531</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
