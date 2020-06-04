@@ -322,7 +322,7 @@ def dtw(ref, compare, len_ref, len_tar, distance_metric='euclidean'):
 def get_start_matchs(stop_frame,start_frames,stop_frames):
     stop_numpy=np.array(stop_frames)
     itemindex = np.argwhere( stop_numpy== stop_frame)
-    print(itemindex)
+    # print(itemindex)
     start_frame=start_frames[itemindex[0][0]]
     return start_frame
 #分别截取标准和用户起始到结束的这段动作的所有坐标点
@@ -370,7 +370,7 @@ def get_track_score(fv_mul_standard,fpositions_front_standard,fpositions_front_u
             distance_xy=euc_dist(xy1,xy2)
             distance.append(distance_xy)
         distance_var=np.std(distance)
-        print(distance_var)
+        # print(distance_var)
         if distance_var<10:
             score=100
         elif 10<=distance_var<20:

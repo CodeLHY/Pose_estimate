@@ -2,6 +2,7 @@ from get_mean_score import *
 from get_fvector_mul import *
 from video_match import *
 import cv2
+import math
 def get_total_frames(path_video):
     cap = cv2.VideoCapture(path_video)
     total_frames = int(cap.get(7))
@@ -39,8 +40,7 @@ def get_match_key_frame_25(start_mixed_standard,stop_mixed_standard,
     dict_stop_score={}
     list_matchs = []
     for (stop_frame_standard, start_frame_standard) in zip(stop_mixed_standard, start_mixed_standard):
-        if stop_frame_standard==699:
-            print(1)
+
         stop_frames_user_25 = get_key_frame_25(stop_frame_standard, stop_mixed_user)
         max_score_all = 0
         max_score_limbs = {}
@@ -52,8 +52,7 @@ def get_match_key_frame_25(start_mixed_standard,stop_mixed_standard,
             # list_matchs.append(match)
         else:
             for stop_frame_user_25 in stop_frames_user_25:
-                if stop_frame_user_25 == 713:
-                    print(1)
+
                 start_frame_user_25 = get_start_matchs(stop_frame_user_25, start_mixed_user, stop_mixed_user)
                 score_limbs, score_all = get_all_scores(fpositions_front_standard, fpositions_left_standard,
                                                         fpositions_front_user, fpositions_left_user,
@@ -104,6 +103,7 @@ def get_match_key_frame_25(start_mixed_standard,stop_mixed_standard,
 #         dict_stop_score[stop_frame_user] = limbs_score
 #     return dict_stop_score,list_not_matches
 # 获取用户在这个标准视频的所有帧的得分
+
 def get_video_score(total_frames_user, start_mixed_user, dict_score):
     """
     给整个视频的所有帧都提供一个分，在没有动作的地方给他空，也就是全零。 在一个动作的区间内（起始到结束）得分全为这个动作的结束帧匹配后比较得到的分数
@@ -127,7 +127,7 @@ def get_video_score(total_frames_user, start_mixed_user, dict_score):
     else:
         for i in range(total_frames_user):
             # 用户还没开始第一个动作的时候就给他等待得分
-            print(count)
+
             if i <= start_all:
                 score_wait = {i: 0 for i in range(11)}
                 score_wait[11] = 0
@@ -150,6 +150,31 @@ def get_video_score(total_frames_user, start_mixed_user, dict_score):
                 scores[i] = score
     return scores
 # 根据躯干得分画躯干，画得分
+def plot_eclipse(coord_start, coord_stop, image, color):
+    center = ((coord_stop[0]+coord_start[0])//2, (coord_stop[1]+coord_start[1])//2)
+    vec = [coord_stop[0]-coord_start[0], coord_stop[1]-coord_start[1]]
+    length = int(np.linalg.norm(np.array(vec))//2)
+    # print(length)
+    width = 5
+    vec_temp = [50, 0]
+    cos_vec = (vec[0]*vec_temp[0] + vec[1]*vec_temp[1])/(np.linalg.norm(np.array(vec))*np.linalg.norm(np.array(vec_temp)))
+    angle = 0
+    if vec[1]<0:
+        angle = math.acos(cos_vec)
+    elif vec[1]>0:
+        angle = math.acos(cos_vec)+math.pi
+    else:
+        if vec[0]>=0:
+            angle = 0
+        elif vec[0]<0:
+            angle = 180
+    # print(center)
+    # print((length, width), 0, 0, -int((angle/math.pi)*180), color, 100)
+    cv2.ellipse(image, center, (length, width), int((angle/math.pi)*180), 0, 360, color, -1)
+    #
+    # cv2.imshow("aa", image)
+    # cv2.waitKey()
+    return image
 def draw_combine_image(image_user, image_standard, score, fpositions_user, fpositions_stantard, frame):
     """
 
@@ -169,20 +194,19 @@ def draw_combine_image(image_user, image_standard, score, fpositions_user, fposi
         k1, k2 = xx[k]
         x1, y1 = dict_positions[k1]
         x2, y2 = dict_positions[k2]
-        print(frame)
-        print(score)
+        # print(frame)
+        # print(score)
         score_limb = score[k]  # 获得某个躯干的得分
         if score_limb < 60:
-            color = (255, 0, 0)
-        elif 60 <= score_limb < 70:
-            color = (200, 0, 50)
-        elif 70 <= score_limb < 80:
-            color = (150, 0, 150)
-        elif 80 <= score_limb < 90:
-            color = (50, 0, 200)
+            color = (205, 201, 122)
+        elif 60 <= score_limb < 80:
+            color = (74, 121, 255)
+        elif 80 <= score_limb <= 100:
+            color = (105, 107, 236)
         else:
             color = (0, 0, 255)
-        cv2.line(image_user, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
+        plot_eclipse([int(x1), int(y1)], [int(x2), int(y2)], image_user, color)
+        # cv2.line(image_user, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
     cv2.putText(image_user, str(score[11]), (10, 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)  # 左上角协商得分
     for k in range(11, 13):
         k1, k2 = xx[k]

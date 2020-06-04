@@ -462,8 +462,8 @@ def del_near_same_key(list_combined, list_belong):
                 if index_nxt>=(length-2):
                     flag_stop = True
                 if not flag_stop:
-                    print(index_cur)
-                    print(len(list_belong))
+                    # print(index_cur)
+                    # print(len(list_belong))
                     belong_cur = list_belong[index_cur]
                     belong_nxt = list_belong[index_nxt] #更新从属性质
 

@@ -20,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="T:/QQ/qq_file/1227347730/FileRecv/main_score.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -133,7 +133,8 @@
       <workItem from="1590972061397" duration="27034000" />
       <workItem from="1591056094144" duration="7397000" />
       <workItem from="1591106100877" duration="21000" />
-      <workItem from="1591236243933" duration="3082000" />
+      <workItem from="1591236243933" duration="3903000" />
+      <workItem from="1591275751237" duration="1495000" />
     </task>
     <servers />
   </component>
@@ -168,5 +169,6 @@
     <SUITE FILE_PATH="coverage/version1$main.coverage" NAME="main Coverage Results" MODIFIED="1590925038569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/version1$main3.coverage" NAME="main3 Coverage Results" MODIFIED="1591062495759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/version1$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1590972600307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/version1$main_score.coverage" NAME="main_score Coverage Results" MODIFIED="1591277354140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
