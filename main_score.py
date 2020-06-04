@@ -160,14 +160,14 @@ def plot_eclipse(coord_start, coord_stop, image, color):
     cos_vec = (vec[0]*vec_temp[0] + vec[1]*vec_temp[1])/(np.linalg.norm(np.array(vec))*np.linalg.norm(np.array(vec_temp)))
     angle = 0
     if vec[1]<0:
-        angle = math.acos(cos_vec)
+        angle = -math.acos(cos_vec)# +math.pi
     elif vec[1]>0:
-        angle = math.acos(cos_vec)+math.pi
+        angle = math.acos(cos_vec)
     else:
         if vec[0]>=0:
             angle = 0
         elif vec[0]<0:
-            angle = 180
+            angle = math.pi
     # print(center)
     # print((length, width), 0, 0, -int((angle/math.pi)*180), color, 100)
     cv2.ellipse(image, center, (length, width), int((angle/math.pi)*180), 0, 360, color, -1)
@@ -190,6 +190,12 @@ def draw_combine_image(image_user, image_standard, score, fpositions_user, fposi
                       13: []}
     for key in range(14):  # 取出所有关节在frame这一帧的得分
         dict_positions[key] = fpositions_user[key][frame]
+    for k in range(11, 13):
+        k1, k2 = xx[k]
+        x1, y1 = dict_positions[k1]
+        x2, y2 = dict_positions[k2]
+        # cv2.line(image_user, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 3)
+        plot_eclipse([int(x1), int(y1)], [int(x2), int(y2)], image_user, (0, 255, 0))
     for k in range(11):
         k1, k2 = xx[k]
         x1, y1 = dict_positions[k1]
@@ -200,7 +206,7 @@ def draw_combine_image(image_user, image_standard, score, fpositions_user, fposi
         if score_limb < 60:
             color = (205, 201, 122)
         elif 60 <= score_limb < 80:
-            color = (74, 121, 255)
+            color = (74, 168, 255)
         elif 80 <= score_limb <= 100:
             color = (105, 107, 236)
         else:
@@ -210,11 +216,7 @@ def draw_combine_image(image_user, image_standard, score, fpositions_user, fposi
         plot_eclipse([int(x1), int(y1)], [int(x2), int(y2)], image_user, color)
         # cv2.line(image_user, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
     cv2.putText(image_user, str(score[11]), (10, 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)  # 左上角协商得分
-    for k in range(11, 13):
-        k1, k2 = xx[k]
-        x1, y1 = dict_positions[k1]
-        x2, y2 = dict_positions[k2]
-        cv2.line(image_user, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 3)
+
 
 
     # 给标准视频也画上躯干  只不过全是最低分

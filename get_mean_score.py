@@ -339,10 +339,10 @@ def get_points(fpositions_standard,fpositions_user,start_standard,stop_standard,
     for j in range(14):
         points_user= []
         points_standard= []
-        for k in range(start_standard, stop_standard):
+        for k in range(start_standard, stop_standard+1):
             x1, y1 = fpositions_standard[j][k]
             points_standard.append((int(x1), int(y1)))
-        for k in range(start_user, stop_user):
+        for k in range(start_user, stop_user+1):
             x1, y1 = fpositions_user[j][k]
             points_user.append((int(x1), int(y1)))
         points_standard_all[j]=points_standard

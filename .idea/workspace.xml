@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9ec78b60-9637-4f3f-ad69-f530c30c9a13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/front.avi" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/front.avi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/left.avi" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/left.avi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_mean_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_mean_score.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_score.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +22,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Final_task/tf-pose-estimation/utils_score/get_fvector_mul.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -30,7 +33,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
-    <property name="two.files.diff.last.used.file" value="T:/QQ/qq_file/1227347730/FileRecv/main_score.py" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../Final_task/tf-pose-estimation/utils_score/get_fvector_mul.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -133,7 +136,7 @@
       <workItem from="1591056094144" duration="7397000" />
       <workItem from="1591106100877" duration="21000" />
       <workItem from="1591236243933" duration="3903000" />
-      <workItem from="1591275751237" duration="2338000" />
+      <workItem from="1591275751237" duration="7906000" />
     </task>
     <servers />
   </component>
@@ -153,21 +156,10 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/get_fvector_mul.py</url>
-          <line>590</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/version1$main.coverage" NAME="main Coverage Results" MODIFIED="1590925038569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/version1$main3.coverage" NAME="main3 Coverage Results" MODIFIED="1591062495759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/version1$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1590972600307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/version1$main_score.coverage" NAME="main_score Coverage Results" MODIFIED="1591277354140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/version1$main_score.coverage" NAME="main_score Coverage Results" MODIFIED="1591290511110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
