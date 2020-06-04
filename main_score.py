@@ -205,6 +205,8 @@ def draw_combine_image(image_user, image_standard, score, fpositions_user, fposi
             color = (105, 107, 236)
         else:
             color = (0, 0, 255)
+        cv2.circle(image_user, (int(x1), int(y1)), 5, (0,0,0),-1)
+        cv2.circle(image_user, (int(x2), int(y2)), 5, (0, 0, 0), -1)
         plot_eclipse([int(x1), int(y1)], [int(x2), int(y2)], image_user, color)
         # cv2.line(image_user, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
     cv2.putText(image_user, str(score[11]), (10, 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)  # 左上角协商得分
